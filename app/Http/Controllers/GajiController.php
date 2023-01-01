@@ -45,8 +45,9 @@ class GajiController extends Controller
     public function update(Request $request, $id)
     {
         $gaji = gaji::find($id);
-        $gaji->nama = $request->get("nama");
-        $gaji->keterangan = $request->get("keterangan");
+        $gaji->Gaji = $request->get("gaji");
+        $gaji->Tunjangan = $request->get("tunjangan");
+        $gaji->Upah = $request->get("upah");
         $gaji->save();
 
         return redirect(route("tampil_gaji", ['id' => $gaji->id]));

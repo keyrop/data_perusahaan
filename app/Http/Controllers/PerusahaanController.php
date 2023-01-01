@@ -45,7 +45,6 @@ class PerusahaanController extends Controller
         $perusahaan = perusahaan::find($id);
         $perusahaan->nama = $request->get("nama");
         $perusahaan->keterangan = $request->get("keterangan");
-        $perusahaan->user_id = auth()->user(user_id);
         $perusahaan->save();
 
         return redirect(route("tampil_perusahaan", ['id' => $perusahaan->id]));
